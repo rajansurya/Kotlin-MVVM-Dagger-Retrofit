@@ -40,18 +40,24 @@ class NetModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
-        val client = OkHttpClient.Builder()
+    fun provideOkHttpClient(hostSelectionInterceptor: HostSelectionInterceptor): OkHttpClient {
+        val client = OkHttpClient.Builder().addInterceptor(hostSelectionInterceptor)
         return client.build()
+    }
+
+    @Provides
+    @BaseURLDynamic
+    fun providebaseDynamic():String{
+        return "https://reqres.in"
     }
 
     @Provides
     @Singleton
     fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
         val retrofit: Retrofit = Retrofit.Builder()
-                .addConverterFactory(ScalarsConverterFactory.create())
+                //.addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .baseUrl(BuildConfig.BASE_URL)
+                .baseUrl(BuildConfig.BASE_URL)//
                 .client(okHttpClient)
                 .build()
         return retrofit
