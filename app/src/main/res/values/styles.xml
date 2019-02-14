@@ -5,7 +5,94 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/hint_color</item>
+        <item name="android:textColorHint">@color/hint_color</item>
+
+    </style>
+    <style name="edttext_style" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorSelText</item>
+        <item name="android:textSize">@dimen/EditFontSize</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/colorText</item>
+        <item name="android:maxLines">1</item>
     </style>
 
+    <style name="tv_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorSelText</item>
+        <item name="android:textSize">@dimen/EditFontSize</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@drawable/alert_rounded_greycorner</item>
+    </style>
+
+    <style name="Spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textColor">@color/colorSelText</item>
+        <item name="android:textSize">@dimen/EditFontSize</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+    <style name="styleSpinnerLike">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/theme_textColor_ticketing</item>
+        <item name="android:background">@drawable/clickable_textview_reverse</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:drawableRight">@drawable/dropdown_new</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="Text" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorblackText</item>
+        <item name="android:layout_marginLeft">@dimen/MarginFromLeft</item>
+        <item name="android:paddingTop">@dimen/PaddingTop</item>
+        <item name="android:paddingBottom">@dimen/PaddingBottom</item>
+        <item name="android:textSize">@dimen/TextFontSize</item>
+    </style>
+
+    <style name="MsgText" parent="Text">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">@dimen/HintTextFontSize</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="submit_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/ButtonFontSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/colorBtnSubmit</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Gets rid of the search icon -->
+        <item name="searchIcon">@drawable/search</item>
+        <!-- Gets rid of the "underline" in the text -->
+        <item name="queryBackground">@color/gray_light</item>
+        <!-- Gets rid of the search icon when the SearchView is expanded -->
+        <item name="searchHintIcon">@null</item>
+        <item name="android:textSize">12sp</item>
+        <!-- The hint text that appears when the user has not typed anything -->
+        <item name="queryHint">@string/search_hint</item>
+    </style>
 </resources>

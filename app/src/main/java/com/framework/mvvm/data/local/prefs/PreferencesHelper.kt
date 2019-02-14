@@ -6,4 +6,7 @@ interface PreferencesHelper {
 
     fun getAccessToken(): String
     fun setAccessToken(accessToken: String);
+    fun getXDeviceToken():String
+    fun getAuthToken():String
+    fun setAuthToken(auth:String)
 }

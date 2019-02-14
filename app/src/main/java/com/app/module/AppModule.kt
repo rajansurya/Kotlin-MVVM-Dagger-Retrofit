@@ -2,6 +2,7 @@ package com.app.module
 
 import android.app.Application
 import android.content.Context
+import com.framework.mvvm.data.local.prefs.PreferencesHelper
 import com.qualifier.dagger.PreferenceInfo
 import dagger.Module
 import dagger.Provides
@@ -20,4 +21,5 @@ class AppModule {
     fun providePreferenceName(): String {
         return AppCostant.PREF_NAME
     }
+
 }

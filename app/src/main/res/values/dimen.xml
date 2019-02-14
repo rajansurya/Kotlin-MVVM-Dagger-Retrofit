@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="MarginFromTop">8dp</dimen>
+    <dimen name="MarginFromBottom">8dp</dimen>
+    <dimen name="MarginFromLeft">8dp</dimen>
+    <dimen name="MarginFromRight">8dp</dimen>
+
+    <dimen name="PaddingTop">5dp</dimen>
+    <dimen name="PaddingBottom">5dp</dimen>
+    <dimen name="PaddingLeft">8dp</dimen>
+    <dimen name="PaddingRight">5dp</dimen>
+    <dimen name="Padding">5dp</dimen>
+
+    <dimen name="HeaderFontSize">20sp</dimen>
+    <dimen name="SubHeaderFontSize">15sp</dimen>
+    <dimen name="TextFontSize">15sp</dimen>
+    <dimen name="HintTextFontSize">13sp</dimen>
+    <dimen name="EditFontSize">18sp</dimen>
+    <dimen name="ButtonFontSize">18sp</dimen>
+    <dimen name="CheckBoxFontSize">15sp</dimen>
+    <dimen name="RadioButtonFontSize">15sp</dimen>
+
+    <dimen name="TitleBarHeight">35dp</dimen>
+    <dimen name="SmallFontSize">12sp</dimen>
+    <dimen name="SpnMargin">10dp</dimen>
+</resources>

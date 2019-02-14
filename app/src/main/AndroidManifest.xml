@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mobile.fieldx.mainsrc">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name="com.component.AndroidApplication"
         android:allowBackup="true"

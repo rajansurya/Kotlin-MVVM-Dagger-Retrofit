@@ -1,18 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logo_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="LOGIN"
+                android:textColor="@color/login_textcolor"
+                android:textSize="17sp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/usererror"
+                android:layout_width="match_parent"
+                app:errorEnabled="true"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etUserName"
+                    style="@style/edttext_style"
+                    android:hint="@string/hint_uname"
+                    android:inputType="text"
+                    android:maxLength="50" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/etPassworderror"
+                    app:errorEnabled="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/etPassword"
+                        style="@style/edttext_style"
+                        android:layout_marginTop="1dp"
+                        android:hint="@string/hint_password"
+                        android:inputType="textPassword"
+                        android:maxLength="15" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <CheckBox
+                    android:id="@+id/show_hide"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/show_hide_password"
+                    android:button="@android:color/transparent" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <CheckBox
+                    android:id="@+id/rememberme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:text="Remember me"
+                    android:textColor="@color/colorblackText" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_loginbtn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/scrollView"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/round_login"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onLoginClick"
+        android:padding="15dp"
+        android:text="LOGIN"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvForgotPaswrd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_loginbtn"
+        android:layout_margin="7dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="forgot password?"
+        android:textColor="@color/hint_color"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+</RelativeLayout>
