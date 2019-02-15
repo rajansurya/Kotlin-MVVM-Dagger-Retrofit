@@ -13,12 +13,14 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var loginViewModel: LoginViewModel
+    @Inject
+    lateinit var testInject: TestInject;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        testInject.CallWithoutProvider()
     }
 
     fun onLoginClick(view: View) {
@@ -28,11 +30,12 @@ class MainActivity : AppCompatActivity() {
         ob.grant_type = "password"
         ob.password = etPassword.text.toString()
         ob.username = etUserName.text.toString()
-          loginViewModel.loadMovies(ob)
+        loginViewModel.loadMovies(ob)
         var us = UserT()
         us.name = "RAJAN GUPTA"
         us.job = "leader"
 
         loginViewModel.callcreateUser(us)
+        testInject.CallWithoutProvider()
     }
 }
