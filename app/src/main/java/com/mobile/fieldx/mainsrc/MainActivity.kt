@@ -22,12 +22,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onLoginClick(view: View) {
-//        val requestJson = HashMap<String, String>()
-//        requestJson.put("username", etUserName.text.toString())
-//        requestJson.put("password", etPassword.text.toString())
-//        requestJson.put("grant_type", "password")
-//        requestJson.put("client_id", BuildConfig.CLIENTID)
-//        requestJson.put("client_secret", BuildConfig.CLIENTSECRET)
         var ob = Login_Request()
         ob.client_id = BuildConfig.CLIENTID
         ob.client_secret = BuildConfig.CLIENTSECRET
@@ -36,9 +30,9 @@ class MainActivity : AppCompatActivity() {
         ob.username = etUserName.text.toString()
           loginViewModel.loadMovies(ob)
         var us = UserT()
-        us.name = "RAJAN GupTa"
+        us.name = "RAJAN GUPTA"
         us.job = "leader"
 
-       // loginViewModel.callcreateUser(us)
+        loginViewModel.callcreateUser(us)
     }
 }

@@ -2,6 +2,8 @@ package com.mobile.fieldx.mainsrc
 
 import com.app.module.HostSelectionInterceptor
 import com.app.module.RequestHeaders
+import com.component.Retrofit1
+import com.component.Retrofit2
 import com.data.model.Login_Request
 import com.data.model.UserT
 import com.retrofit.apicall.ApiHelper
@@ -14,7 +16,7 @@ import retrofit2.Retrofit
 import javax.inject.Inject
 
 /*Start API Call */
-class Login_Service @Inject constructor(var retrofit: Retrofit,var hostSelectionInterceptor: RequestHeaders) : ApiHelper {
+class Login_Service @Inject constructor(@Retrofit2 var retrofit: Retrofit, @Retrofit1 var retrofitFieldX: Retrofit, var hostSelectionInterceptor: RequestHeaders) : ApiHelper {
 
     override fun createUser(user: UserT): Call<UserT> {
         //hostSelectionInterceptor.setURL("https://reqres.in")
@@ -27,7 +29,7 @@ class Login_Service @Inject constructor(var retrofit: Retrofit,var hostSelection
 //        println("FInal REQ  " + header)
 //        println("FInal REQ  " + requestdata.client_id + requestdata.username + requestdata.password)
        // hostSelectionInterceptor.setURL("https://sgs-mr.payworldindia.com")
-        return retrofit.create(ApiHelper::class.java).getLoginAPICall(header, requestdata)
+        return retrofitFieldX.create(ApiHelper::class.java).getLoginAPICall(header, requestdata)
     }
 
 

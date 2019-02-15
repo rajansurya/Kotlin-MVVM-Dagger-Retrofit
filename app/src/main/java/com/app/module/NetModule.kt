@@ -1,6 +1,8 @@
 package com.app.module
 
 import android.support.annotation.NonNull
+import com.component.Retrofit1
+import com.component.Retrofit2
 import com.framework.mvvm.data.local.prefs.ImpPreferencesHelper
 import com.framework.mvvm.data.local.prefs.PreferencesHelper
 import com.google.gson.FieldNamingPolicy
@@ -73,10 +75,11 @@ class NetModule {
     }
     @Provides
     @Singleton
-    fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient.Builder,requestHeaders: HostSelectionInterceptor): Retrofit {
+    @Retrofit1
+    fun provideRetrofit1(gson: Gson, okHttpClient: OkHttpClient.Builder,requestHeaders: HostSelectionInterceptor): Retrofit {
         var logger = HttpLoggingInterceptor()
         logger.level = HttpLoggingInterceptor.Level.BODY
-        var lov=  okHttpClient.addInterceptor(logger).build()
+        var lov=  okHttpClient.build()//.addInterceptor(logger)
         val retrofit: Retrofit = Retrofit.Builder()
                 //.addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
@@ -85,6 +88,23 @@ class NetModule {
                 .build()
         return retrofit
     }
+
+    @Provides
+    @Singleton
+    @Retrofit2
+    fun provideRetrofit2(gson: Gson, okHttpClient: OkHttpClient.Builder,requestHeaders: HostSelectionInterceptor): Retrofit {
+        var logger = HttpLoggingInterceptor()
+        logger.level = HttpLoggingInterceptor.Level.BODY
+        var lov=  okHttpClient.build()//.addInterceptor(logger)
+        val retrofit: Retrofit = Retrofit.Builder()
+                //.addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .baseUrl("https://reqres.in")
+                .client(lov)
+                .build()
+        return retrofit
+    }
+
 
     @Provides
     @Singleton

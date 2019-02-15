@@ -13,16 +13,17 @@ import java.util.*
 import javax.inject.Inject
 
 class Imp_Login_Repository @Inject constructor(var loginservice: Login_Service, var preferencesHelper: PreferencesHelper) : Login_Repository {
+
     override fun createUser(user: UserT): Call<UserT> {
         var ob: Call<UserT> = loginservice.createUser(user)
         ob.enqueue(object : Callback<UserT> {
             override fun onResponse(call: Call<UserT>?, response: Response<UserT>) {
                 var ii: UserT? = response.body()
-                Log.i("Response   DDD", ii?.toString());
+                Log.i(" Response REQRES ", ii?.toString());
             }
 
             override fun onFailure(call: Call<UserT>?, t: Throwable?) {
-                Log.i("Response   DDD", t?.stackTrace.toString());
+                Log.i(" Response REQRES ", t?.stackTrace.toString());
             }
 
         })
@@ -40,7 +41,7 @@ class Imp_Login_Repository @Inject constructor(var loginservice: Login_Service, 
                 if (response.isSuccessful)
                     Log.i(" RAJAN FieldX  ", Gson().toJson(response?.body()));
                 else
-                    Log.i(" RAJAN FieldX  ", response.errorBody()?.string());
+                    Log.i("NOT  RAJAN FieldX  ", response.errorBody()?.string());
 
             }
 
@@ -59,7 +60,7 @@ class Imp_Login_Repository @Inject constructor(var loginservice: Login_Service, 
         map.put("X-Client-Ip", getIPAddress(true))
         map.put("x-client-id", BuildConfig.CLIENTID)
         map.put("sales-executive-login", "1")
-        println("map " + map)
+        //println("map " + map)
         return map
     }
 
