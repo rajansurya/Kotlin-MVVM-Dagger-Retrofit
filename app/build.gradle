@@ -18,21 +18,20 @@ android {
     }
     buildTypes {
         release {
-            buildConfigField "String", "BASE_URL", '"https://sgs-mr.payworldindia.com"'
-            //https://sgs.payworld.co.in
-            buildConfigField "String", "CRM_HOST_IP", '"https://crm-web.payworld.co.in/"'
+            buildConfigField "String", "BASE_URL", '""'
+
             buildConfigField "String", "CLIENTID", '"12"'
             buildConfigField "String", "CLIENTSECRET", '"9GaBs41lT8aeVTePbmK4DG9kZcH3ksAcJuF1tmEY"'
-            buildConfigField "String", "WORKFLOWURL", '"https://beta.payworldindia.com"'
+
             minifyEnabled false
             debuggable true
             signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug{
-            buildConfigField "String", "CRM_HOST_IP", '"https://test-crm-api.payworld.co.in/"'
-            buildConfigField "String", "WORKFLOWURL", '"https://test-beta.payworldindia.com"'
-            buildConfigField "String", "BASE_URL", '"https://test-sgs.payworld.co.in"'
+
+
+            buildConfigField "String", "BASE_URL", '""'
             buildConfigField "String", "CLIENTID", '"12"'
             buildConfigField "String", "CLIENTSECRET", '"QO7IvPyXKfq3HcilzxdcRKLVjs6wahlZi1XLUjFe"'
         }
