@@ -1,4 +1,4 @@
-package com.mobile.fieldx.mainsrc
+package com.mobile.kodare.mainsrc
 
 import android.content.Context
 import android.widget.Toast

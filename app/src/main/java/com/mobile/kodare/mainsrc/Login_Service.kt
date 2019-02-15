@@ -1,4 +1,4 @@
-package com.mobile.fieldx.mainsrc
+package com.mobile.kodare.mainsrc
 
 import com.app.module.HostSelectionInterceptor
 import com.app.module.RequestHeaders

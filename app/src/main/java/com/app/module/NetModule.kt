@@ -8,9 +8,9 @@ import com.framework.mvvm.data.local.prefs.PreferencesHelper
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.mobile.fieldx.mainsrc.BuildConfig
-import com.mobile.fieldx.mainsrc.Imp_Login_Repository
-import com.mobile.fieldx.mainsrc.Login_Repository
+import com.mobile.kodare.mainsrc.BuildConfig
+import com.mobile.kodare.mainsrc.Imp_Login_Repository
+import com.mobile.kodare.mainsrc.Login_Repository
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

@@ -1,7 +1,7 @@
 package com.app.module
 
-import com.mobile.fieldx.mainsrc.LoginViewModel
-import com.mobile.fieldx.mainsrc.MainActivity
+import com.mobile.kodare.mainsrc.LoginViewModel
+import com.mobile.kodare.mainsrc.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

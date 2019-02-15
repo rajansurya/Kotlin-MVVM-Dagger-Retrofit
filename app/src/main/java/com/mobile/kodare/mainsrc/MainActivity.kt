@@ -1,4 +1,4 @@
-package com.mobile.fieldx.mainsrc
+package com.mobile.kodare.mainsrc
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
