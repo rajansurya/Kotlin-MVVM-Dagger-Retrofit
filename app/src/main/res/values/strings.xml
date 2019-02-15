@@ -853,7 +853,6 @@
     <string name="success_trans_msg">Your transaction has been successful</string>
     <string name="failed_trans_msg">Your transaction has been failed</string>
     <string name="timed_out_trans_msg">Your transaction has been Timed-Out</string>
-    <string name="msg_notify">Allow FieldX to get Notification. </string>
     <string name="empty_notify">No New Notification.</string>
     <string name="contact_us">Contact Us</string>
     <string name="follow_us">Follow Us</string>

@@ -2,8 +2,7 @@ package com.app.module
 
 object  AppCostant{
    // val PREF_NAME:String="rajan_pre"
-    val PREF_NAME = "FIELDX_PREF"
-    val IMAGE_DIRECTORY_NAME = "FieldX"
+    val PREF_NAME = "KODARE_PREF"
     val subDir="Document"
     val REQUEST_GALLERY:Int=201
     val REQUEST_CAMERA:Int=301

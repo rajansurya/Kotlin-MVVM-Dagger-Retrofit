@@ -39,9 +39,9 @@ class Imp_Login_Repository @Inject constructor(var loginservice: Login_Service, 
 
             override fun onResponse(call: Call<Any>?, response: Response<Any>) {
                 if (response.isSuccessful)
-                    Log.i(" RAJAN FieldX  ", Gson().toJson(response?.body()));
+                    Log.i(" RAJAN KODARE  ", Gson().toJson(response?.body()));
                 else
-                    Log.i("NOT  RAJAN FieldX  ", response.errorBody()?.string());
+                    Log.i("NOT  RAJAN KODARE  ", response.errorBody()?.string());
 
             }
 
