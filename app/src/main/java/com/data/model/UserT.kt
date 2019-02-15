@@ -12,5 +12,9 @@ import com.google.gson.annotations.SerializedName
     @SerializedName("createdAt")
     lateinit var createdAt: String;
 
+    override fun toString(): String {
+       return name+"  "+job+"  "+id+"  "+createdAt
+
+    }
 }
 

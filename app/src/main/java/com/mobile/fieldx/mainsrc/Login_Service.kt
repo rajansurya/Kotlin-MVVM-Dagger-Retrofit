@@ -1,5 +1,7 @@
 package com.mobile.fieldx.mainsrc
 
+import com.app.module.HostSelectionInterceptor
+import com.app.module.RequestHeaders
 import com.data.model.Login_Request
 import com.data.model.UserT
 import com.retrofit.apicall.ApiHelper
@@ -12,18 +14,20 @@ import retrofit2.Retrofit
 import javax.inject.Inject
 
 /*Start API Call */
-class Login_Service @Inject constructor(retrofit: Retrofit) : ApiHelper {
+class Login_Service @Inject constructor(var retrofit: Retrofit,var hostSelectionInterceptor: RequestHeaders) : ApiHelper {
 
     override fun createUser(user: UserT): Call<UserT> {
-        return retroFit.createUser(user)
+        //hostSelectionInterceptor.setURL("https://reqres.in")
+        return retrofit.create(ApiHelper::class.java).createUser(user)
     }
 
-    private val retroFit by lazy { retrofit.create(ApiHelper::class.java) }
+   // private val retroFit by lazy { retrofit.create(ApiHelper::class.java) }
 
-    override fun getLoginAPICall(header: Map<String, String>, requestdata: Login_Request): Call<String> {// Call<List<Login_Data>>
+    override fun getLoginAPICall(header: Map<String, String>, requestdata: Login_Request): Call<Any> {// Call<List<Login_Data>>
 //        println("FInal REQ  " + header)
 //        println("FInal REQ  " + requestdata.client_id + requestdata.username + requestdata.password)
-        return retroFit.getLoginAPICall(header, requestdata)
+       // hostSelectionInterceptor.setURL("https://sgs-mr.payworldindia.com")
+        return retrofit.create(ApiHelper::class.java).getLoginAPICall(header, requestdata)
     }
 
 

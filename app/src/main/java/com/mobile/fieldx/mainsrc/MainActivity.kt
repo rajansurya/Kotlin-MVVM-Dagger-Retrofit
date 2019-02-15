@@ -39,6 +39,6 @@ class MainActivity : AppCompatActivity() {
         us.name = "RAJAN GupTa"
         us.job = "leader"
 
-        loginViewModel.callcreateUser(us)
+       // loginViewModel.callcreateUser(us)
     }
 }

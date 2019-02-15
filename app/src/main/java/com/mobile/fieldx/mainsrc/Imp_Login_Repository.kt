@@ -4,6 +4,7 @@ import android.util.Log
 import com.data.model.Login_Request
 import com.data.model.UserT
 import com.framework.mvvm.data.local.prefs.PreferencesHelper
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,35 +18,40 @@ class Imp_Login_Repository @Inject constructor(var loginservice: Login_Service, 
         ob.enqueue(object : Callback<UserT> {
             override fun onResponse(call: Call<UserT>?, response: Response<UserT>) {
                 var ii: UserT? = response.body()
-                Log.i("Response   DDD", ii?.name);
+                Log.i("Response   DDD", ii?.toString());
             }
 
             override fun onFailure(call: Call<UserT>?, t: Throwable?) {
+                Log.i("Response   DDD", t?.stackTrace.toString());
             }
 
         })
         return ob
     }
 
-    override fun getLoginResponse(requestdata: Login_Request): Call<String> {//Call<List<Login_Data>>
-       var oo:Call<String> = loginservice.getLoginAPICall(setHeader(), requestdata)
-        oo.enqueue(object : Callback<String> {
-            override fun onFailure(call: Call<String>?, t: Throwable?) {
+    override fun getLoginResponse(requestdata: Login_Request): Call<Any> {//Call<List<Login_Data>>
+        var oo: Call<Any> = loginservice.getLoginAPICall(setHeader(), requestdata)
+        oo.enqueue(object : Callback<Any> {
+            override fun onFailure(call: Call<Any>?, t: Throwable?) {
+                Log.i("Response   onFailure ", t?.stackTrace.toString());
+            }
+
+            override fun onResponse(call: Call<Any>?, response: Response<Any>) {
+                if (response.isSuccessful)
+                    Log.i(" RAJAN FieldX  ", Gson().toJson(response?.body()));
+                else
+                    Log.i(" RAJAN FieldX  ", response.errorBody()?.string());
 
             }
 
-            override fun onResponse(call: Call<String>?, response: Response<String>?) {
-                var ff=response?.body()
-                Log.i("Response   DDD", ff.toString());
-            }
 
         })
         return oo
     }
 
     fun setHeader(): Map<String, String> {
-        preferencesHelper.setAccessToken("jkahdfhdqwjRAJAN2342344324")
-        preferencesHelper.setAuthToken("GGGGGGGGGGGGGGGGG")
+//        preferencesHelper.setAccessToken("jkahdfhdqwjRAJAN2342344324")
+//        preferencesHelper.setAuthToken("GGGGGGGGGGGGGGGGG")
         var map = HashMap<String, String>()
         map.put("Content-Type", "application/json")
         map.put("X-device-token", preferencesHelper.getAccessToken())
