@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -61,4 +62,5 @@ dependencies {
     implementation "com.google.code.gson:gson:2.8.2"
     implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.android.support:multidex:1.0.0'
 }

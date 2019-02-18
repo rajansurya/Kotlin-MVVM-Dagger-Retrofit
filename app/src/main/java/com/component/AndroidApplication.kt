@@ -2,12 +2,13 @@ package com.component
 
 import android.app.Activity
 import android.app.Application
+import android.support.multidex.MultiDexApplication
 import com.app.module.DaggerAppComponent
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
 
-class AndroidApplication : Application(), HasActivityInjector {
+class AndroidApplication : Application(), HasActivityInjector  {
     @Inject
     lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 

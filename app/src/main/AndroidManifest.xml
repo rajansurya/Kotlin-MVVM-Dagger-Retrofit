@@ -3,6 +3,7 @@
     package="com.mobile.kodare.mainsrc">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="com.component.AndroidApplication"
         android:allowBackup="true"
@@ -11,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity android:name="com.mobile.kodare.mainsrc.OtherViewtest">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
