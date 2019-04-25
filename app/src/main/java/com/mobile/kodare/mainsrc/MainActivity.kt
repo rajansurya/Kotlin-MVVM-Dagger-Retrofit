@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var loginViewModel: LoginViewModel
     @Inject
-    lateinit var testInject: TestInject;
+    lateinit var testInject: TestInject
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
