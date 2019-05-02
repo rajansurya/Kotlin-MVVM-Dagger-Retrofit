@@ -5,6 +5,7 @@ import com.retrofit.api.pojo.MultipleResource;
 import com.retrofit.api.pojo.User;
 import com.retrofit.api.pojo.UserList;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -20,8 +21,8 @@ interface APIInterface {
     @GET("/api/unknown")
     Call<MultipleResource> doGetListResources();
 
-    @POST("/api/users")
-    Call<User> createUser(@Body User user);
+    @GET("/photos")
+    Call<ResponseBody> createUser();
 
     @GET("/api/users?")
     Call<UserList> doGetUserList(@Query("page") String page);

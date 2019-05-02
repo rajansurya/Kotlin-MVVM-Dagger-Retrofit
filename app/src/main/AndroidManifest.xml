@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.mobile.kodare.mainsrc.OtherViewtest">
+        <activity android:name="com.retrofit.api.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

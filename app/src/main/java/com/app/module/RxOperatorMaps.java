@@ -1,6 +1,8 @@
 package com.app.module;
 
 
+import android.arch.lifecycle.Transformations;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,13 +27,13 @@ public class RxOperatorMaps {
                     @Override
                     public Observable<?> call(String s) {
                         final int delay = new Random().nextInt(5);
+
                         return Observable.just(s).map(new Func1<String, Object>() {
                             @Override
                             public Object call(String s) {
                                 return s.toUpperCase();
                             }
-                        })
-                                .delay(delay, TimeUnit.SECONDS);
+                        }).delay(delay, TimeUnit.SECONDS);
                     }
                 })
                 .subscribe(new Action1<Object>() {
@@ -42,6 +44,7 @@ public class RxOperatorMaps {
                 });
 
         Thread.sleep(5000);
+
     }
 
 }

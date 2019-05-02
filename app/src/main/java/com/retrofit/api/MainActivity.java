@@ -14,23 +14,24 @@ import com.retrofit.api.pojo.UserList;
 
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements UpdateView{
 
     TextView responseText;
-    APIInterface apiInterface;
+    API_Controller api_controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.retrofit);
         responseText = (TextView) findViewById(R.id.responseText);
-        apiInterface = APIClient.getClient().create(APIInterface.class);
 
-
+        api_controller=new API_Controller(this,this);
+        api_controller.sendDataToController();
         /**
          GET List Resources
          **/
@@ -69,22 +70,6 @@ public class MainActivity extends AppCompatActivity {
         /**
          Create new user
          **/
-        User user = new User("RAJAN", "leader");
-        Call<User> call1 = apiInterface.createUser(user);
-        call1.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                User user1 = response.body();
-
-                Toast.makeText(getApplicationContext(), user1.name + " " + user1.job + " " + user1.id + " " + user1.createdAt, Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                call.cancel();
-            }
-        });
 
         /**
          GET List Users
@@ -141,5 +126,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
+    }
+
+    @Override
+    public void updateViewdata(ResponseBody user1) {
+        Toast.makeText(this, user1.toString() , Toast.LENGTH_SHORT).show();
     }
 }
